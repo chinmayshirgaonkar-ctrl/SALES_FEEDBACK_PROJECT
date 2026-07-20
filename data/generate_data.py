@@ -11,7 +11,7 @@ print("Generating big data (100,000 rows)... This may take a minute.")
 np.random.seed(42)
 
 # Parameters
-NUM_RECORDS = 100000
+NUM_RECORDS = 5000   
 REGIONS = ['North America', 'Europe', 'Asia Pacific', 'Latin America']
 CATEGORIES = ['Electronics', 'Clothing', 'Home & Garden', 'Software', 'Toys']
 
@@ -35,7 +35,7 @@ feedback_samples = {
 }
 
 # Generate Data
-dates = [datetime(2023, 1, 1) + timedelta(days=random.randint(0, 365)) for _ in range(NUM_RECORDS)]
+dates = [datetime(2023, 1, 1) + timedelta(days=random.randint(0, 365)) for _ in range(int(NUM_RECORDS))]
 regions = np.random.choice(REGIONS, NUM_RECORDS)
 categories = np.random.choice(CATEGORIES, NUM_RECORDS)
 sales_amounts = np.round(np.random.uniform(10.0, 5000.0, NUM_RECORDS), 2)
